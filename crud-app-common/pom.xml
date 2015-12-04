@@ -9,10 +9,26 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>crud-app-common</artifactId>
+
+	<!-- Adding project version depending on parent project version -->
+	<version>${project.parent.version}</version>
+
 	<packaging>jar</packaging>
 	<name>crud-app-common</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-security-module-api</artifactId>
+			<version>${deltaspike.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-security-module-impl</artifactId>
+			<version>${deltaspike.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 </project>

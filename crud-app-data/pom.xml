@@ -10,12 +10,20 @@
 	</parent>
 	<artifactId>crud-app-data</artifactId>
 	<name>crud-app-data</name>
+	<!-- Adding project version depending on parent project version -->
+	<version>${project.parent.version}</version>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<hibernate.version>4.3.5.Final</hibernate.version>
+
+	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.3.5.Final</version>
+			<version>${hibernate.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -27,7 +35,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.5.Final</version>
+			<version>${hibernate.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>

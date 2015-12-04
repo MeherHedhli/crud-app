@@ -7,6 +7,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>crud-app-ear</artifactId>
+	<!-- Adding project version depending on parent project version -->
+	<version>${project.parent.version}</version>
 	<packaging>ear</packaging>
 	<dependencies>
 		<dependency>

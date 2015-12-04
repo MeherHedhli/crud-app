@@ -9,9 +9,16 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>crud-app-web</artifactId>
+	<!-- Adding project version depending on parent project version -->
+	<version>${project.parent.version}</version>
 	<packaging>war</packaging>
 	<name>crud-app-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<primefaces.version>5.3</primefaces.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>fr.esiag.isidis</groupId>
@@ -23,9 +30,18 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>5.3</version>
+			<version>${primefaces.version}</version>
 		</dependency>
-
+		<dependency>
+				<groupId>org.apache.deltaspike.core</groupId>
+				<artifactId>deltaspike-core-impl</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.core</groupId>
+				<artifactId>deltaspike-core-api</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
 	</dependencies>
 	<build>
 		<plugins>

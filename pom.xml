@@ -9,42 +9,50 @@
 	<name>application CRUD java JEE </name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+		<skip.tests>true</skip.tests>
+		<deltaspike.version>1.5.1</deltaspike.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.deltaspike.core</groupId>
+				<artifactId>deltaspike-core-impl</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.core</groupId>
+				<artifactId>deltaspike-core-api</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.modules</groupId>
+				<artifactId>deltaspike-jsf-module-api</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.modules</groupId>
+				<artifactId>deltaspike-jsf-module-impl</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.deltaspike.modules</groupId>
+				<artifactId>deltaspike-security-module-api</artifactId>
+				<version>${deltaspike.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.deltaspike.modules</groupId>
+				<artifactId>deltaspike-security-module-impl</artifactId>
+				<version>${deltaspike.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 
 	<dependencies>
-		<dependency>
-			<groupId>org.apache.deltaspike.core</groupId>
-			<artifactId>deltaspike-core-impl</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.deltaspike.core</groupId>
-			<artifactId>deltaspike-core-api</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.deltaspike.modules</groupId>
-			<artifactId>deltaspike-jsf-module-api</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.deltaspike.modules</groupId>
-			<artifactId>deltaspike-jsf-module-impl</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.deltaspike.modules</groupId>
-			<artifactId>deltaspike-security-module-api</artifactId>
-			<version>1.5.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.deltaspike.modules</groupId>
-			<artifactId>deltaspike-security-module-impl</artifactId>
-			<version>1.5.1</version>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-7.0</artifactId>
@@ -85,9 +93,49 @@
 		</dependency>
 
 	</dependencies>
+	<build>
+		<plugins>
 
-
-
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<!-- Skipping TESTS -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<skipTests>${skip.tests}</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<!-- Deploy in wildfly -->
+	<profiles>
+		<profile>
+			<id>wildflyDeploy</id>
+			<build>
+				<finalName>${project.artifactId}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.wildfly.plugins</groupId>
+						<artifactId>wildfly-maven-plugin</artifactId>
+						<version>1.0.1.Final</version>
+						<configuration>
+							<hostname>127.0.0.1</hostname> 
+							<port>8080</port>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 	<modules>
 		<module>crud-app-common</module>
 		<module>crud-app-data</module>

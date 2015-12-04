@@ -17,28 +17,16 @@
         <dependent-module archiveName="crud-app-common-0.0.1-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/crud-app-common/crud-app-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="deltaspike-core-impl-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/core/deltaspike-core-impl/1.5.1/deltaspike-core-impl-1.5.1.jar">
+        <dependent-module archiveName="deltaspike-security-module-api-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-security-module-api/1.5.1/deltaspike-security-module-api-1.5.1.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="deltaspike-core-api-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/core/deltaspike-core-api/1.5.1/deltaspike-core-api-1.5.1.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="deltaspike-jsf-module-api-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-jsf-module-api/1.5.1/deltaspike-jsf-module-api-1.5.1.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="deltaspike-jsf-module-impl-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-jsf-module-impl/1.5.1/deltaspike-jsf-module-impl-1.5.1.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="deltaspike-proxy-module-api-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-proxy-module-api/1.5.1/deltaspike-proxy-module-api-1.5.1.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="deltaspike-proxy-module-impl-asm5-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-proxy-module-impl-asm5/1.5.1/deltaspike-proxy-module-impl-asm5-1.5.1.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="deltaspike-security-module-api-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-security-module-api/1.5.1/deltaspike-security-module-api-1.5.1.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="deltaspike-security-module-impl-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/modules/deltaspike-security-module-impl/1.5.1/deltaspike-security-module-impl-1.5.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="deltaspike-core-impl-1.5.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/apache/deltaspike/core/deltaspike-core-impl/1.5.1/deltaspike-core-impl-1.5.1.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
   </wb-module>
